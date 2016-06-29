@@ -61,41 +61,7 @@ with open('scripts/sheet.csv', 'rb') as csvfile:
             # add to names
             names.append(n2)
 
-        #
-        # cur.execute("""
-        # INSERT INTO
-        #     meta.team
-        #     (name)
-        # VALUES
-        #     (%s)""",
-        # );
-        # conn.commit()
 
-
-# matches = []
-# # with open('scripts/sheet.csv', 'rb') as csvfile:
-# #     func = csv.reader(csvfile, delimiter=',')
-# #
-# #     header = func.next()
-# #     for row in func:
-# #         m1 = row[1]
-# #         m2 = row[2]
-# #         m3 = row[3]
-# #         m4 = row[4]
-# #         m5 = row[5]
-# #         m6 = row[6]
-# #         m7 = row[7]
-# #         m8 = row[8]
-# #         matches.append(m1)
-# #         matches.append(m2)
-# #         matches.append(m3)
-# #         matches.append(m4)
-# #         matches.append(m5)
-# #         matches.append(m6)
-# #         matches.append(m7)
-# #         matches.append(m8)
-#
-# print matches
 
 
 with open('scripts/sheet.csv', 'rb') as csvfile:
@@ -151,17 +117,3 @@ cur.execute("""INSERT INTO meta.team (name, southpaw, employer) VALUES ('joe', '
 
 
 conn.commit()
-# cur.execute("SELECT * FROM meta.team;")
-
-
-# print cur.fetchall()
-# print "TESTING"
-
-# leng = len(cur.fetchall())
-# names_leng = len(names)
-# test_pass = leng == names_leng
-#
-# if test_pass == True:
-#     print "Booyaaa"
-# else:
-#     print "FAAIILL"
