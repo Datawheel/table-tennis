@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#EAEDED">
+<head>
+
+  <script src="http://www.d3plus.org/js/d3.js"></script>
+  <script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+  <title>Players</title>
+  <h1>Datawheel Table Tennis Club Players</h1>
+</head>
+
+
+
+
+  <style>
+
+  a {
+    padding-right: 120px;
+    padding-left: 70px;
+    font-family: "Verdana";
+  }
+  </style>
+
+  <!-- Navigaton -->
+  <div class="w3-container w3-center" id="nav">
+  <div class="w3-center">
+
+    <ul>
+      <a href="/input">Input</a>
+      <a href="/players">Players</a>
+      <a href="/stats">Stats</a>
+      <a href="/matches">Matches</a>
+    </ul>
+  </div>
+  </div>
+
+
+
+
+<style>
+h1 {
+  color: #34495E;
+  font-family: verdana;
+  font-size: 140%;
+}
+table {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 0px solid #000000;
+    text-align: left;
+    padding: 7px;
+}
+tr:nth-child(even) {
+    background-color: #FFCC66;
+}
+
+.center {
+    text-align: center;
+
+}*/
+
+</style>
+<body>
+
+<div id="viz">
+
+</div>
+
+<div id="viz2">
+
+</div>
+
+
+
+<table>
+  <tr>
+      {% for banana in trows[0].keys() %}
+    <th>
+      {{banana}}
+    </th>
+      {% endfor %}
+  </tr>
+
+  {% for row in trows %}
+  <tr>
+    {% for value in row.values() %}
+      <td>
+        {{value}}
+      </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+
+<!-- <script>
+  var data = JSON.parse('{{data|safe}}');
+  data = data.map(function(d){
+      d.size = 1;
+      d.southpaw = d.southpaw ? "southpaw" : "orthodox";
+      return d;
+  })
+  console.log(data);
+  d3plus.viz().data(data).type("bar").id(["southpaw", "id"]).container("#viz")
+  .y("size")
+  .x("southpaw")
+  .draw();
+</script> -->
+
+
+
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#EAEDED">
+<head>
+  <title>Matches</title>
+
+  <h1>Datawheel Table Tennis Club Matches</h1>
+</head>
+
+
+  <style>
+  a {
+    padding-right: 30px;
+    padding-left: 70px;
+    font-family: "Verdana";
+  }
+  </style>
+
+
+  <!-- Navigaton -->
+  <div class="w3-container w3-center" id="nav">
+  <div class="w3-center">
+
+    <ul>
+      <a href="/input">Input</a>
+      <a href="/players">Players</a>
+      <a href="/stats">Stats</a>
+      <a href="/matches">Matches</a>
+    </ul>
+  </div>
+  </div>
+
+
+  <body>
+
+
+<style>
+h1 {
+  color: #34495E;
+  font-family: verdana;
+  font-size: 80%;
+}
+table {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    font-size: 12px;
+    font-family: verdana;
+    border: 0px solid #000000;
+    text-align: left;
+    padding: 2px;
+}
+tr:nth-child(even) {
+    background-color: #FFCC66;
+}
+
+.center {
+    text-align: center;
+
+}*/
+
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+      {% for tablehead in tableheaders %}
+    <th>
+      {{tablehead}}
+    </th>
+      {% endfor %}
+  </tr>
+
+  {% for row in trows %}
+  <tr>
+    {% for value in row.values() %}
+      <td>
+        {{value}}
+      </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+
+<script>
+  var data = "{{rows|safe}}";
+  console.log(data);
+</script>
+</html>

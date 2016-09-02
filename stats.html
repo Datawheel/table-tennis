@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stats</title>
+
+  <h1>Datawheel Table Tennis Club Stats</h1>
+</head>
+<head>
+<style>
+    h1
+    {
+      color: #34495E;
+      font-family: verdana;
+      font-size: 140%;
+    }
+
+</style>
+
+<style>
+a {
+  padding-right: 120px;
+  padding-left: 70px;
+  font-family: "Verdana";
+}
+</style>
+
+
+</head>
+
+<!-- Navigaton -->
+<div class="w3-container w3-center" id="nav">
+<div class="w3-center">
+
+  <ul>
+    <a href="/input">Input</a>
+    <a href="/players">Players</a>
+    <a href="/stats">Stats</a>
+    <a href="/matches">Matches</a>
+  </ul>
+</div>
+</div>
+
+<body>
+
+<body bgcolor="#EAEDED">
+
+<meta charset="utf-8">
+
+<script src="http://www.d3plus.org/js/d3.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<div id="viz">
+</div>
+
+
+<script>
+  var data = JSON.parse('{{data|safe}}');
+  data = data.map(function(d){
+      d.size = 1;
+      d.southpaw = d.southpaw ? "southpaw" : "orthodox";
+      return d;
+  })
+  console.log(data);
+  d3plus.viz()
+  .data(data)
+  .type("line")
+  .id(["southpaw", "id"])
+  .container("#viz")
+  .y("size")
+  .x("southpaw")
+  .draw();
+</script>
+
+
+<script>
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .data(sample_data)
+    .type("line")
+    .id(["parent","name"])
+    .y("value")
+    .x("year")
+    .draw()
+
+</script>
+<style>
+</style>
+
+
+</body>
+</html>
